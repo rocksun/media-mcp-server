@@ -1,24 +1,47 @@
 # Media MCP Server
 
-专业的媒体元数据控制协议服务端实现
+Professional implementation of Media Metadata Control Protocol server
 
-## 功能特性
-- 基于FastMCP框架构建
-- 支持多媒体元数据管理
-- 提供RESTful API接口
+## Features
+- Built on FastMCP framework
+- Multimedia metadata management
+- RESTful API interfaces
 
-## 安装
+## Installation
 ```bash
 uv pip install -e .
 ```
 
-## 运行
+## Running
 ```bash
-python -m media_mcp_server
+uv run media-mcp-server
 ```
 
-## 开发
+## Development
 ```bash
 uv venv
 uv pip install -e .[dev]
+```
+
+## Installation
+
+**Development/Unpublished Server Configuration**
+
+```json
+{
+  "mcpServers": {
+    "media-mcp-server": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/Users/rocksun/Projects/media-mcp-server",
+        "run",
+        "media-mcp-server"
+      ],
+      "env": {
+        "CLOUDINARY_URL": "cloudinary://my_key:my_secret@my_cloud_name"
+      }
+    }
+  }
+}
 ```
