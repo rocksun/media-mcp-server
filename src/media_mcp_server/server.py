@@ -16,17 +16,17 @@ cloudinary.config(
 )
 
 @mcp.tool()
-async def upload_image(image_path: str) -> str:
+async def upload_image(image: str) -> str:
     """Uploads an image to Cloudinary.
 
     Args:
-        image_path: Local file path of the image to upload.
+        image: Image file path or url of the image to upload.
 
     Returns:
         str: Secure URL of the uploaded image on Cloudinary CDN.
     """
     upload_result = uploader.upload(
-        image_path,
+        image,
         transformation=[
             {'quality': 'auto'}
         ]
@@ -35,5 +35,5 @@ async def upload_image(image_path: str) -> str:
 
 if __name__ == "__main__":
     import asyncio
-    path = asyncio.run(upload_image('C:\\Users\\sdj21\\Pictures\\76c83370-barriers-to-genai-adoption_boomi-1024x688.jpg'))
+    path = asyncio.run(upload_image('https://assets-eu-01.kc-usercontent.com/8c150fae-fba4-0115-ef12-b10a8a4e2715/bdac1871-464e-4051-88db-7df20c3bfffa/SQ_Logo_Server_Light%20Backgrounds.svg?w=176&h=48&auto=format&fit=crop'))
     print(path)
