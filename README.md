@@ -23,6 +23,20 @@ uv venv
 uv pip install -e .[dev]
 ```
 
+## Tools
+
+**upload_image**
+
+```
+Uploads an image to Cloudinary.
+
+Args:
+    image: Image file path or url of the image to upload.
+
+Returns:
+    str: Secure URL of the uploaded image on Cloudinary CDN.
+```
+
 ## Installation
 
 **Development/Unpublished Server Configuration**
